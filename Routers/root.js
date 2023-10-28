@@ -1,7 +1,7 @@
 const express = require("express");
 const token = require("./routerFunctions/token");
 const getDoctors = require("./routerFunctions/doctors/getDoctors");
-const addDoctor = require("./routerFunctions/doctors/addDoctor");
+const addDoctor = require("./routerFunctions/doctors/addOneDoctor");
 const addSpeciality = require("./routerFunctions/speciality/addSpeciality");
 const rootRouter = express.Router();
 

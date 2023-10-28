@@ -28,7 +28,7 @@ connect();
 // application router
 app.use("/", rootRouter);
 app.use("/doctors", doctorsRouter);
-app.use("/specialities", specialityRouter);
+app.use("/speciality", specialityRouter);
 
 // Listen server
 app.listen(port, () => {
