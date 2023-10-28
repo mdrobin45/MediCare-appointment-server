@@ -16,7 +16,7 @@ const doctorSchema = new mongoose.Schema({
       type: Number,
    },
    feedback: {
-      type: number,
+      type: Number,
    },
    location: {
       type: String,

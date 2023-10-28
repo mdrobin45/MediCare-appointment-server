@@ -2,7 +2,7 @@ const express = require("express");
 const token = require("./routerFunctions/token");
 const getDoctors = require("./routerFunctions/doctors/getDoctors");
 const addDoctor = require("./routerFunctions/doctors/addDoctor");
-const addCategory = require("./routerFunctions/addCategory");
+const addSpeciality = require("./routerFunctions/addSpeciality");
 const router = express.Router();
 
 // Token generate
@@ -11,8 +11,8 @@ router.post("/token", async (req, res) => {
 });
 
 // Add category
-router.post("/category", (req, res) => {
-   addCategory(req, res);
+router.post("/speciality", (req, res) => {
+   addSpeciality(req, res);
 });
 // Get Doctors
 router.get("/doctors", (req, res) => {

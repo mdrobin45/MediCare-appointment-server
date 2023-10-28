@@ -3,7 +3,7 @@ const { DoctorModel } = require("../../../Models/models");
 const getDoctors = async (req, res) => {
    try {
       const result = await DoctorModel.find({}).populate(
-         "category",
+         "speciality",
          "name -_id"
       );
       res.send(result);
