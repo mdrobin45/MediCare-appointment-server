@@ -21,6 +21,12 @@ const doctorSchema = new mongoose.Schema({
    feedback: {
       type: Number,
    },
+   verified: {
+      type: Boolean,
+   },
+   available: {
+      type: String,
+   },
    location: {
       type: String,
    },
