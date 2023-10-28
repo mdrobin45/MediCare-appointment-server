@@ -4,7 +4,9 @@ const port = process.env.PORT || 3000;
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
-const router = require("./Routers/root");
+const rootRouter = require("./Routers/root");
+const doctorsRouter = require("./Routers/doctors");
+const specialityRouter = require("./Routers/specialities");
 require("dotenv").config();
 
 // Use middleware
@@ -24,7 +26,9 @@ const connect = async () => {
 connect();
 
 // application router
-app.use("/", router);
+app.use("/", rootRouter);
+app.use("/doctors", doctorsRouter);
+app.use("/specialities", specialityRouter);
 
 // Listen server
 app.listen(port, () => {
