@@ -3,7 +3,7 @@ const { DoctorModel } = require("../../../Models/models");
 const addMultipleDoctor = async (req, res) => {
    try {
       const multipleDoctors = req.body;
-      const result = await DoctorModel.insertMany(multipleDoctors);
+      await DoctorModel.insertMany(multipleDoctors);
 
       res.status(200).json({ message: "Doctors added" });
    } catch (err) {

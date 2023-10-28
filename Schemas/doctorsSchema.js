@@ -12,6 +12,9 @@ const doctorSchema = new mongoose.Schema({
       type: mongoose.Types.ObjectId,
       ref: "Specialities",
    },
+   tagline: {
+      type: String,
+   },
    ratings: {
       type: Number,
    },
