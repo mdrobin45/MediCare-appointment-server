@@ -1,6 +1,6 @@
-const { Schema, default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 
-const doctorsSchema = new Schema({
+const doctorSchema = new mongoose.Schema({
    name: {
       type: String,
       required: true,
@@ -8,34 +8,43 @@ const doctorsSchema = new Schema({
    photoURL: {
       type: String,
    },
-   tagline: {
-      type: String,
-   },
-   gender: {
-      type: String,
-   },
-   age: {
-      type: Number,
-   },
-   address: {
-      type: String,
-   },
-   phone: {
-      type: Number,
+   speciality: {
+      type: mongoose.Types.ObjectId,
+      ref: "Specialities",
    },
    ratings: {
       type: Number,
    },
-   overview: {
+   feedback: {
+      type: number,
+   },
+   location: {
+      type: String,
+   },
+   clinicServices: {
+      type: Array,
+   },
+   price: {
+      type: Number,
+   },
+   bio: {
       type: String,
    },
    education: {
       type: Array,
    },
-   category: {
-      type: mongoose.Types.ObjectId,
-      ref: "Category",
+   experience: {
+      type: Array,
+   },
+   awards: {
+      type: Array,
+   },
+   services: {
+      type: Array,
+   },
+   specializations: {
+      type: Array,
    },
 });
 
-module.exports = doctorsSchema;
+module.exports = doctorSchema;

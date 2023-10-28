@@ -1,12 +1,10 @@
 const { model } = require("mongoose");
-const userSchema = require("../Schemas/userSchema");
-const doctorsSchema = require("../Schemas/doctorsSchema");
-const categorySchema = require("../Schemas/categorySchema");
+const specialitiesSchema = require("../Schemas/specialitiesSchema");
+const doctorSchema = require("../Schemas/doctorsSchema");
 
 // Models
-const AdminModel = model("Admin", userSchema);
-const DoctorModel = model("Doctors", doctorsSchema);
-const CategoryModel = model("Category", categorySchema);
+const DoctorModel = model("Doctors", doctorSchema);
+const SpecialitiesModel = model("Specialities", specialitiesSchema);
 
 // Export
-module.exports = { AdminModel, DoctorModel, CategoryModel };
+module.exports = { DoctorModel, SpecialitiesModel };
