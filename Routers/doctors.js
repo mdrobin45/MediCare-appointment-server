@@ -6,23 +6,15 @@ const getOneDoctor = require("./routerFunctions/doctors/getOneDoctor");
 const doctorsRouter = express.Router();
 
 // Get all Doctors
-doctorsRouter.get("/", (req, res) => {
-   getDoctors(req, res);
-});
+doctorsRouter.get("/", getDoctors);
 
 // Get one Doctors
-doctorsRouter.get("/:id", (req, res) => {
-   getOneDoctor(req, res);
-});
+doctorsRouter.get("/:id", getOneDoctor);
 
 // Add a doctor
-doctorsRouter.post("/", (req, res) => {
-   addOneDoctor(req, res);
-});
+doctorsRouter.post("/", addOneDoctor);
 
-// Add a doctor
-doctorsRouter.post("/multiple", (req, res) => {
-   addMultipleDoctor(req, res);
-});
+// Add multiple doctors
+doctorsRouter.post("/multiple", addMultipleDoctor);
 
 module.exports = doctorsRouter;
