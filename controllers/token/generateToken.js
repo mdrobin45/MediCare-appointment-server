@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const token = (req, res) => {
+const generateToken = (req, res) => {
    const { name, email } = req.body;
    try {
       // Generate token
@@ -20,4 +20,4 @@ const token = (req, res) => {
    }
 };
 
-module.exports = token;
+module.exports = generateToken;

@@ -1,6 +1,6 @@
 const { model } = require("mongoose");
-const specialitiesSchema = require("../Schemas/specialitiesSchema");
-const doctorSchema = require("../Schemas/doctorsSchema");
+const specialitiesSchema = require("../schemas/specialitiesSchema");
+const doctorSchema = require("../schemas/doctorsSchema");
 
 // Models
 const DoctorModel = model("Doctors", doctorSchema);

@@ -1,4 +1,4 @@
-const { DoctorModel } = require("../../../Models/models");
+const { DoctorModel } = require("../../models/models");
 
 const getOneDoctor = async (req, res) => {
    try {

@@ -1,4 +1,4 @@
-const { SpecialitiesModel } = require("../../../Models/models");
+const { SpecialitiesModel } = require("../../models/models");
 
 const addSpeciality = async (req, res) => {
    try {

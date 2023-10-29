@@ -1,8 +1,8 @@
 const express = require("express");
-const getDoctors = require("./routerFunctions/doctors/getDoctors");
-const addOneDoctor = require("./routerFunctions/doctors/addOneDoctor");
-const addMultipleDoctor = require("./routerFunctions/doctors/addMultipleDoctor");
-const getOneDoctor = require("./routerFunctions/doctors/getOneDoctor");
+const getDoctors = require("../controllers/doctors/getDoctors");
+const getOneDoctor = require("../controllers/doctors/getOneDoctor");
+const addOneDoctor = require("../controllers/doctors/addOneDoctor");
+const addMultipleDoctor = require("../controllers/doctors/addMultipleDoctor");
 const doctorsRouter = express.Router();
 
 // Get all Doctors
