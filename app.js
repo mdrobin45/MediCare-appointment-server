@@ -7,6 +7,7 @@ const doctorsRouter = require("./routes/doctors");
 const specialityRouter = require("./routes/specialities");
 const database = require("./database");
 const rootRouter = require("./routes/root");
+const appointmentRoute = require("./routes/appointments");
 require("dotenv").config();
 
 // Use middleware
@@ -19,8 +20,9 @@ database();
 
 // application router
 app.use("/", rootRouter);
-app.use("/doctors", doctorsRouter);
+app.use("/doctor", doctorsRouter);
 app.use("/speciality", specialityRouter);
+app.use("/appointment", appointmentRoute);
 
 // Listen server
 app.listen(port, () => {

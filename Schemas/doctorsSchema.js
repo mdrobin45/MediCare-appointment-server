@@ -12,6 +12,9 @@ const doctorSchema = new mongoose.Schema({
       type: mongoose.Types.ObjectId,
       ref: "Specialities",
    },
+   availability: {
+      type: Array,
+   },
    tagline: {
       type: String,
    },
@@ -23,9 +26,6 @@ const doctorSchema = new mongoose.Schema({
    },
    verified: {
       type: Boolean,
-   },
-   available: {
-      type: String,
    },
    location: {
       type: String,
