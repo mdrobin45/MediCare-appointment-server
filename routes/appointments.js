@@ -2,15 +2,19 @@ const express = require("express");
 const addAppointment = require("../controllers/appointments/addAppointment");
 const getAppointment = require("../controllers/appointments/getAppointment");
 const getAppointments = require("../controllers/appointments/getAppointments");
+const getUserAppointments = require("../controllers/appointments/getUserAppointments");
 const appointmentRoute = express.Router();
 
-// Get all Doctors
-appointmentRoute.get("/", getAppointments);
+// Get user Appointments
+appointmentRoute.get("/my-appointments", getUserAppointments);
 
-// Get one Doctors
+// Get one Appointment
 appointmentRoute.get("/:id", getAppointment);
 
-// Add a doctor
+// Get all Appointment
+appointmentRoute.get("/", getAppointments);
+
+// Add an appointment
 appointmentRoute.post("/", addAppointment);
 
 // Add multiple doctors

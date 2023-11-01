@@ -10,16 +10,16 @@ const appointmentSchema = new mongoose.Schema({
    address: {
       type: String,
    },
-   phone: {
-      type: Number,
+   city: {
+      type: String,
    },
    phone: {
-      type: Number,
-   },
-   phone: {
-      type: Number,
+      type: String,
    },
    meetDate: {
+      type: String,
+   },
+   bookingDate: {
       type: String,
    },
    meetTime: {
@@ -28,7 +28,7 @@ const appointmentSchema = new mongoose.Schema({
    gender: {
       type: String,
    },
-   birthday: {
+   age: {
       type: String,
    },
    note: {
@@ -37,9 +37,6 @@ const appointmentSchema = new mongoose.Schema({
    doctor: {
       type: mongoose.Types.ObjectId,
       ref: "Doctors",
-   },
-   appointmentTime: {
-      type: String,
    },
    price: {
       type: Number,

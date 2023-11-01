@@ -11,7 +11,7 @@ const appointmentRoute = require("./routes/appointments");
 require("dotenv").config();
 
 // Use middleware
-app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
+app.use(cors({ credentials: true, origin: "http://localhost:5174" }));
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET_SIGN));
 
