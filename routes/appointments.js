@@ -6,7 +6,7 @@ const getUserAppointments = require("../controllers/appointments/getUserAppointm
 const appointmentRoute = express.Router();
 
 // Get user Appointments
-appointmentRoute.get("/my-appointments", getUserAppointments);
+appointmentRoute.get("/all", getUserAppointments);
 
 // Get one Appointment
 appointmentRoute.get("/:id", getAppointment);

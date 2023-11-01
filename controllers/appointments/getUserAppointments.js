@@ -2,9 +2,9 @@ const { AppointmentModel } = require("../../models/models");
 
 const getUserAppointments = async (req, res) => {
    try {
-      const { userEmail } = req.body;
-      console.log(userEmail);
-      const result = await AppointmentModel.find({ email: userEmail }).populate(
+      const { email } = req.query;
+      console.log(email);
+      const result = await AppointmentModel.find({ email }).populate(
          "doctor",
          "name -_id"
       );
