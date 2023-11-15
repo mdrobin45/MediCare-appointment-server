@@ -3,10 +3,11 @@ const addAppointment = require("../controllers/appointments/addAppointment");
 const getAppointment = require("../controllers/appointments/getAppointment");
 const getAppointments = require("../controllers/appointments/getAppointments");
 const getUserAppointments = require("../controllers/appointments/getUserAppointments");
+const authUser = require("../middlewares/authUser");
 const appointmentRoute = express.Router();
 
 // Get user Appointments
-appointmentRoute.get("/all", getUserAppointments);
+appointmentRoute.get("/all", authUser, getUserAppointments);
 
 // Get one Appointment
 appointmentRoute.get("/:id", getAppointment);
