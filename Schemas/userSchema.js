@@ -1,20 +1,12 @@
 const { Schema } = require("mongoose");
 
 const userSchema = new Schema({
-   name: {
-      type: String,
-      required: true,
-   },
    email: {
       type: String,
       required: true,
    },
    phone: {
       type: String,
-   },
-   password: {
-      type: String,
-      required: true,
    },
    gender: {
       type: String,
@@ -24,7 +16,7 @@ const userSchema = new Schema({
    },
    role: {
       type: String,
-      enum: ["admin", "patient"],
+      enum: ["admin", "doctor", "patient"],
    },
 });
 

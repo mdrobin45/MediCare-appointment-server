@@ -54,6 +54,10 @@ const doctorSchema = new mongoose.Schema({
    specializations: {
       type: Array,
    },
+   status: {
+      type: String,
+      enum: ["pending", "approved"],
+   },
 });
 
 module.exports = doctorSchema;
