@@ -7,7 +7,7 @@ const authUser = require("../middlewares/authUser");
 const appointmentRoute = express.Router();
 
 // Get user Appointments
-appointmentRoute.get("/all", authUser, getUserAppointments);
+appointmentRoute.get("/all", getUserAppointments);
 
 // Get one Appointment
 appointmentRoute.get("/:id", getAppointment);

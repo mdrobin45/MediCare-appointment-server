@@ -3,8 +3,15 @@ const jwt = require("jsonwebtoken");
 const authUser = async (req, res, next) => {
    try {
       const { userEmail } = req.query;
-      console.log(userEmail);
       const { authToken } = req.cookies;
+
+      // If token is exist
+      if (!authToken) {
+         res.status(404).json({ error: "Token not found" });
+         return;
+      }
+
+      // verify token
       const decoded = await jwt.verify(authToken, process.env.JWT_SECRET_SIGN);
       const { email } = decoded;
       if (userEmail === email) {

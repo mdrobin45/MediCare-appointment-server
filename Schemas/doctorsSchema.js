@@ -5,6 +5,9 @@ const doctorSchema = new mongoose.Schema({
       type: String,
       required: true,
    },
+   email: {
+      type: String,
+   },
    photoURL: {
       type: String,
    },
