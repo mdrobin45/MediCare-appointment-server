@@ -6,13 +6,19 @@ const verifyToken = require("../middlewares/verifyToken");
 const getPatientAppointments = require("../controllers/appointments/getPatientAppointments");
 const getDoctorsAppointment = require("../controllers/appointments/getDoctorsAppointment");
 const updateStatus = require("../controllers/appointments/updateStatus");
+const verifyRole = require("../middlewares/verifyRole");
 const appointmentRoute = express.Router();
 
 // Get patient Appointments
 appointmentRoute.get("/patient", verifyToken, getPatientAppointments);
 
 // Get doctor Appointments
-appointmentRoute.get("/doctor", verifyToken, getDoctorsAppointment);
+appointmentRoute.get(
+   "/doctor",
+   verifyToken,
+   verifyRole(["doctor"]),
+   getDoctorsAppointment
+);
 
 // Get one Appointment
 appointmentRoute.get("/:id", getAppointment);

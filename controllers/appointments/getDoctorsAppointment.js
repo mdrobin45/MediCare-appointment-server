@@ -16,6 +16,7 @@ const getDoctorsAppointment = async (req, res) => {
 
          res.send(result);
       }
+      res.end();
    } catch {
       res.status(500).json({ message: "There was an server error" });
    }

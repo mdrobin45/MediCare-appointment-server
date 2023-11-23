@@ -38,6 +38,9 @@ const appointmentSchema = new mongoose.Schema({
       type: mongoose.Types.ObjectId,
       ref: "Doctors",
    },
+   doctorEmail: {
+      type: String,
+   },
    price: {
       type: Number,
    },
