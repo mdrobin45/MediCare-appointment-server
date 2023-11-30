@@ -2,12 +2,12 @@ const { DoctorModel, AppointmentModel } = require("../../models/models");
 
 const getDoctorsAppointment = async (req, res) => {
    try {
-      const { userEmail } = req.query;
+      const { email } = req.query;
 
       // Retrieve only appointment with doctor email
-      if (userEmail) {
+      if (email) {
          // Find doctor id with email
-         const doctor = await DoctorModel.findOne({ email: userEmail });
+         const doctor = await DoctorModel.findOne({ email });
 
          // Use doctor id to find appointments
          const result = await AppointmentModel.find({

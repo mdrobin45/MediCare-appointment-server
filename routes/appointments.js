@@ -2,23 +2,22 @@ const express = require("express");
 const addAppointment = require("../controllers/appointments/addAppointment");
 const getAppointment = require("../controllers/appointments/getAppointment");
 const getAppointments = require("../controllers/appointments/getAppointments");
-const verifyToken = require("../middlewares/verifyToken");
 const getPatientAppointments = require("../controllers/appointments/getPatientAppointments");
 const getDoctorsAppointment = require("../controllers/appointments/getDoctorsAppointment");
 const updateStatus = require("../controllers/appointments/updateStatus");
-const verifyRole = require("../middlewares/verifyRole");
+const verifyUser = require("../middlewares/verifyUser");
+
 const appointmentRoute = express.Router();
 
 // Get patient Appointments
-appointmentRoute.get("/patient", verifyToken, getPatientAppointments);
+appointmentRoute.get(
+   "/patient",
+   verifyUser(["patient"]),
+   getPatientAppointments
+);
 
 // Get doctor Appointments
-appointmentRoute.get(
-   "/doctor",
-   verifyToken,
-   verifyRole(["doctor"]),
-   getDoctorsAppointment
-);
+appointmentRoute.get("/doctor", verifyUser(["doctor"]), getDoctorsAppointment);
 
 // Get one Appointment
 appointmentRoute.get("/:id", getAppointment);
@@ -27,10 +26,10 @@ appointmentRoute.get("/:id", getAppointment);
 appointmentRoute.get("/", getAppointments);
 
 // Add an appointment
-appointmentRoute.post("/", verifyToken, addAppointment);
+appointmentRoute.post("/", verifyUser, addAppointment);
 
 // update appointment status
-appointmentRoute.put("/update/:id", verifyToken, updateStatus);
+appointmentRoute.put("/update/:id", verifyUser, updateStatus);
 
 // Add multiple doctors
 // appointmentRoute.post("/multiple", addMultipleDoctor);

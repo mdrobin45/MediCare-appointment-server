@@ -14,8 +14,7 @@ const generateToken = (req, res) => {
          httpOnly: true,
       });
       res.status(200).json({ token: token });
-   } catch (err) {
-      console.log(err);
+   } catch {
       res.status(500).json({ message: "Server error!" });
    }
 };
