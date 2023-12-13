@@ -7,7 +7,7 @@ const verifyUser = (roles) => async (req, res, next) => {
 
       // If token is not exist
       if (!authToken) {
-         res.status(404).json({ error: "Token not found" });
+         res.status(401).json({ error: "Token not found" });
          return;
       }
 

@@ -21,7 +21,7 @@ appointmentRoute.get(
 appointmentRoute.get("/doctor", verifyUser(["doctor"]), getDoctorsAppointment);
 
 // Get filtered appointment
-appointmentRoute.get("/filter", getFilteredAppointment);
+// appointmentRoute.get("/filter", getFilteredAppointment);
 
 // Get one Appointment
 appointmentRoute.get("/:id", getAppointment);

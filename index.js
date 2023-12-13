@@ -12,7 +12,7 @@ const userRouter = require("./routes/users");
 require("dotenv").config();
 
 // Use middleware
-app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
+app.use(cors({ credentials: true, origin: process.env.LOCAL_SITE }));
 app.use(express.json());
 app.use(cookieParser());
 

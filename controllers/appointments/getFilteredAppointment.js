@@ -32,6 +32,7 @@ const getFilteredAppointment = async (req, res) => {
                   gender: "$genderCounts.gender",
                },
                totalAppointments: { $first: "$totalAppointments" },
+               genderCount: { $sum: "$genderCounts.count" },
             },
          },
          {
@@ -39,7 +40,7 @@ const getFilteredAppointment = async (req, res) => {
                _id: 0,
                year: "$_id.year",
                month: "$_id.month",
-               gender: "$_id.gender",
+               gender: "$genderCount",
                totalAppointments: 1,
             },
          },
